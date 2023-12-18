@@ -1,0 +1,11 @@
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=80
+
+[MASTER]
+# Disable require a docstring
+disable=
+    C0114, # missing-module-docstring
+    C0116, # Missing function or method docstring (missing-function-docstring)
+    E0401, # Unable to import NOTE: couldn't fix the pylint issue so added this here

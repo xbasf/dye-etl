@@ -13,6 +13,10 @@ repos:
     hooks:
       - id: black
         language_version: python
+        args:
+          [
+            "--line-length=80"
+          ]
   - repo: local
     hooks:
       - id: pylint
@@ -21,6 +25,10 @@ repos:
         language: system
         types: [python]
         require serial: true
+        args:
+          [
+            "--rcfile=pylintrc"
+          ]
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
     hooks:
