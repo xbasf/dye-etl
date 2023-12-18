@@ -1,7 +1,9 @@
 import requests
 
 
-def query_table(api_key: str, database_id: str) -> dict:
+def query_table(
+    api_key: str, database_id: str, notion_table_page_size: int = 100
+) -> dict:
     headers = {
         "Authorization": "Bearer " + api_key,
         "Content-Type": "application/json",
@@ -10,7 +12,7 @@ def query_table(api_key: str, database_id: str) -> dict:
 
     url = f"https://api.notion.com/v1/databases/{database_id}/query"
 
-    payload = {"page_size": 100}
+    payload = {"page_size": notion_table_page_size}
     try:
         response = requests.post(
             url, json=payload, headers=headers, timeout=120
